@@ -1,0 +1,7 @@
+Generează o ofertă detaliată pentru client bazată pe Solicitarea client, care să includă:
+■ Descrierea aplicației solicitate.
+■ Tehnologiile folosite pentru dezvoltarea aplicației (ex: stack tehnologic
+- front-end, back-end, baze de date, etc.).
+■ Task-urile concrete și detaliate necesare pentru dezvoltarea aplicației,
+inclusiv cele care nu sunt menționate direct de client dar sunt
+necesare (ex: secțiuni financiare, facturare, etc.).

@@ -1,0 +1,58 @@
+
+Oferta pentru firma - Full serv core S.R.L
+
+I. Scopul documentului: 
+
+Această ofertă preliminară este bazată pe informațiile pe care ni le-ați furnizat în același timp înainte de a începe efectiv dezvoltarea și de a vă putea oferi o estimare exactă a costurilor și timpului necesar, va fi necesar să parcurgem câteva etape esențiale de planificare
+
+1. Elaborarea unei diagrame logice pentru a defini arhitectura aplicației. 
+2. Crearea unei diagrame ER pentru a structura baza de date. 
+3. Realizarea unui design inițial în Figma pentru a elimina orice ambiguitate legată de interfața grafică. 
+
+Pentru începerea etapelor de mai sus, va fi necesar să semnăm un contract de colaborare și să achitați în avans prețul acestora: 
+
+Diagrama logică și diagrama ER: X Euro + TVA 
+Proiectul în Figma: X Euro + TVA 
+Acești bani se vor scădea din prețul total de dezvoltare odată acceptată oferta fermă. 
+
+Oferta de mai jos este doar orientativă și urmărește să vă ofere o perspectivă asupra modului în care operăm și a costurilor probabile. Pentru o ofertă și un timp de implementare exact, va fi necesar să completăm etapele de planificare menționate
+
+Scopul acestui document este de a prezenta o ofertă pentru dezvoltarea unui CRM/ERP personalizat conform cerințelor.
+
+Definiții:
+- CRM (Customer Relationship Management): CRM este un acronim pentru "Customer Relationship Management" sau "Gestionarea Relațiilor cu Clienții" în română. Este o strategie și un set de tehnologii utilizate pentru a gestiona relațiile și interacțiunile cu clienții. Scopul principal al unui sistem CRM este să îmbunătățească relațiile cu clienții, să optimizeze procesele de vânzare și marketing și să ofere o mai bună experiență generală pentru clienți.
+- ERP (Enterprise Resource Planning): ERP este un acronim pentru "Enterprise Resource Planning" sau "Planificarea Resurselor Enterprise" în română. Este un sistem de software care ajută organizațiile să gestioneze și să integreze eficient toate procesele lor de afaceri, inclusiv contabilitatea, resursele umane, gestionarea stocurilor, producția, vânzările și multe altele. Scopul principal al unui sistem ERP este să faciliteze fluxurile de lucru interne și să ofere o imagine consolidată și în timp real a resurselor și proceselor organizației.
+
+II. Propunere structură: 
+
+1. Secțiune de Comenzi și Gestiunea Materiilor Prime:
+Implementarea unui modul pentru introducerea manuală a comenzilor în sistem, cu câmpuri specifice precum cantitate, preț și dată a comenzii.
+Desemnarea unei persoane responsabile pentru gestionarea necesarului de materie primă pe baza contractelor încheiate și a lucrărilor în curs de desfășurare pe baza unui sistem de permisiuni.
+Efectuarea unui necesar estimat de materie primă pentru fiecare lucrare sau șantier.
+
+2. Gestiunea Stocului:
+Organizarea gestiunii stocurilor pe structura lucrărilor, cu câmpuri pentru diferite șantiere.
+Implementarea unui sistem "Drag and Drop" pentru transferul facil al produselor, cantităților și prețurilor de achiziție din comenzi în gestiunea fiecărui șantier.
+Sistem pentru crearea produselor 'cele mai utilizate' pentru a facilita procesul de creare a produselor pentru noile șantiere adăugate pe parcurs. Un produs finit poate fi compus din mai multe materii prime. Stocurile de materii prime vor fi actualizate în timpul procesului de producție/expediere comandă, și când se apropie de epuizare, se va primi o notificare.
+
+3. Secțiune de Raportare:
+Dezvoltarea unui sistem de raportare csv care permite generarea de rapoarte la sfârșit de zi/lună cu cantitățile comandate, consumate și costurile aferente, atât în total, cât și pentru fiecare șantier în parte.
+
+III. Sugestii suplimentare: 
+
+4. Gestionarea Cash-Flow-ului:
+Implementarea unui sistem de gestionare a bugetelor (BO), cu posibilitatea de a seta și monitoriza limitele de cheltuieli pentru fiecare lună. (Notificări și avertizări pentru a preveni depășirea bugetului stabilit.)
+Crearea unui modul specializat pentru gestionarea și raportarea cheltuielilor, inclusiv cheltuieli directe, cheltuieli indirecte și costurile cu forța de muncă.
+Personalizarea rapoartelor csv pentru a oferi o viziune detaliată asupra cheltuielilor.
+
+III. Pret și timp de implementare: 
+
+Timp estimat de livrare: 2-3 luni de zile
+Timpul de livrare depinde de complexitatea proiectului și cerințele dvs. Dar, vom lucra în strânsă colaborare cu dvs. pentru a respecta deadline-urile stabilite.
+
+PRET: X EURO + TVA - Cu sugestii suplimentare
+ (Ore lucrătoare: 400 ore x 2 programmatori)
+
+PRET: X EURO + TVA - Fără sugestii suplimentare
+ (Ore lucrătoare: 280 ore x 2 programmatori)
+

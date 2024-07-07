@@ -2,7 +2,14 @@ import ollama
 response = ollama.chat(model='llama3', messages=[
   {
     'role': 'user',
-    'content': """creaza un exemplu de cerinta a unui client fata de o firma it si completeaza template-ul urmator corespunzator cerintei:
+    'content': """Genereaza o ofertă detaliată in limba romana pentru client care să includă:
+■ Descrierea aplicației solicitate.
+■ Tehnologiile folosite pentru dezvoltarea aplicației (ex: stack tehnologic
+- front-end, back-end, baze de date, etc.).
+■ Task-urile concrete și detaliate necesare pentru dezvoltarea aplicației,
+inclusiv cele care nu sunt menționate direct de client dar sunt
+necesare (ex: secțiuni financiare, facturare, etc.),
+urmand templateul "Solicitarea client
 
 Oferta pentru firma
 
@@ -26,11 +33,11 @@ Oferta pentru firma
 
     -to be completed by ai-    
 
-    II. Propunere structură (335 Ore - 2 Programatori):
+    II. Propunere structură (X Ore - X Programatori):
 
     -to be completed by ai-
 
-    III. Sugestii suplimentare (24 ore de munca * 2 programatori): 
+    III. Sugestii suplimentare (X ore de munca * X programatori): 
 
     -to be completed by ai-
 
@@ -40,7 +47,8 @@ Oferta pentru firma
 
     *Prețul este orientativ și nu trebuie să fie limitativ; în cazul în care bugetul beneficiarului este mai restrâns decât oferta noastră      în faza de proiectare, putem identifica alternative la costuri inferioare prin integrarea unui număr redus de funcționalități.
 
-    -to be completed by ai-""",
+    -to be completed by ai-"
+   pentru Solicitarea client: Aplicatia sa contina 3 ramuri esentiale: 1. Sofer: harta cu traseul sau care sa contina punctele de ridicare si livrare. Timpul estimat pentru ambele . Posibilitatea de a prelua singur o solicitare de la un restaurant sau sa i se acorde livrari. Raport zilnic cu livrarile efectuate.Actualizare in timp real al parcursului sau catre client. 2. Restaurant: preluare comenzi, confirmarea lor si a statusului comenzii in timp real catre client. In orele de varf sa nu mai aiba clientul optiunea de a pune noi comenzi daca dureaza mai mult decat timpul estimat in aplicatie. Solictare sofer si optiunea de a vedea parcursul soferului. 3. Client : sa i-a la cunostinta toate detaliile legate de restaurant ( timp estimate de livrare , timp de preparare etc). sa adauge produse in cos , achizitie cu card sau numerar din aplicatie. Sa primeasca notificari cu fiecare parcurs al comenzii (confirmata, comanda urmeaza sa fie ridicata, comanda a fost ridicata, comanda livrata). Dupa plasarea si confirmarea si preluarea comenzii de catre sofer sa I se prezinte soferul, numarul de contact al acestuia si parcursul sau pe harta. FUNCTIE ADMIN : care poate observa activitatea celor 3 ramuri mentionate si poate efectua un raport pe fiecare. Firma are contracted oar cu restaurante . In aditie mai fac livrari de colete mici sau plicuri la solicitarea clientilor prin urmare ar trebui si o optiune de acest gen in aplicatie unde sa ofere cateva info despre colet (daca e plic sau e o cutie si ce demensiuni/greutate are).""",
   },
 ])
 print(response['message']['content'])

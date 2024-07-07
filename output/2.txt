@@ -1,0 +1,63 @@
+
+Oferta pentru firma - Test 2
+
+I. Scopul documentului: 
+
+Această ofertă preliminară este bazată pe informațiile pe care ni le-ați furnizat în același timp înainte de a începe efectiv dezvoltarea și de a vă putea oferi o estimare exactă a costurilor și timpului necesar, va fi necesar să parcurgem câteva etape esențiale de planificare
+
+1. Elaborarea unei diagrame logice pentru a defini arhitectura aplicației. 
+2. Crearea unei diagrame ER pentru a structura baza de date. 
+3. Realizarea unui design inițial în Figma pentru a elimina orice ambiguitate legată de interfața grafică. 
+
+Pentru începerea etapelor de mai sus, va fi necesar să semnăm un contract de colaborare și să achitați în avans prețul acestora: 
+
+Diagrama logică și diagrama ER: X Euro + TVA 
+Proiectul în Figma: X Euro + TVA 
+Acești bani se vor scădea din prețul total de dezvoltare odată acceptată oferta fermă. 
+
+Oferta de mai jos este doar orientativă și urmărește să vă ofere o perspectivă asupra modului în care operăm și a costurilor probabile. Pentru o ofertă și un timp de implementare exact, va fi necesar să completăm etapele de planificare menționate
+
+Scopul acestui document este de a prezenta o ofertă pentru dezvoltarea unui CRM/ERP personalizat conform cerințelor.
+
+Definiții:
+- CRM (Customer Relationship Management): CRM este un acronim pentru "Customer Relationship Management" sau "Gestionarea Relațiilor cu Clienții" în română. Este o strategie și un set de tehnologii utilizate pentru a gestiona relațiile și interacțiunile cu clienții. Scopul principal al unui sistem CRM este să îmbunătățească relațiile cu clienții, să optimizeze procesele de vânzare și marketing și să ofere o mai bună experiență generală pentru clienți.
+- ERP (Enterprise Resource Planning): ERP este un acronim pentru "Enterprise Resource Planning" sau "Planificarea Resurselor Enterprise" în română. Este un sistem de software care ajută organizațiile să gestioneze și să integreze eficient toate procesele lor de afaceri, inclusiv contabilitatea, resursele umane, gestionarea stocurilor, producția, vânzările și multe altele. Scopul principal al unui sistem ERP este să faciliteze fluxurile de lucru interne și să ofere o imagine consolidată și în timp real a resurselor și proceselor organizației.
+
+II. Propunere structură: 
+
+1. Secțiune de Comenzi și Stocuri:
+
+Implementarea unui sistem de gestionare a comenzilor online, inclusiv verificarea stocurilor de materiale și costurile de achiziție (Înainte de a plasa comanda, se va genera automat o ofertă. Administratorii vor valida oferta, iar apoi aceasta va fi trimisă către client printr-un buton dedicat. Comanda va fi procesată doar atunci când clientul acceptă oferta, moment în care stocurile vor fi rezervate timp de 2 zile, astfel încât materialele să fie disponibile în momentul acceptării ofertei de către client).
+Sistem de gestionare a resturilor de materiale, unde informațiile despre dimensiuni și cantități pot fi introduse și monitorizate.
+Automatizarea extragerii necesarului de materiale din stocuri și din resturile disponibile pentru fiecare comandă nouă.
+- Timp de dezvoltate: 25 zile * 2 programatori
+
+2. Secțiune de Livrare și Gestiune:
+Implementarea unui sistem de gestionare a livrărilor care poate manipula produsele asamblate sau trimise pe bucăți cu posibilitatea angajaților care efectuează inventarul înainte de livrare de a introduce în ERP componentele lipsă.
+Sincronizarea în timp real a stocurilor și notificare pentru generarea a comenzilor către furnizori pentru componente lipsă.
+- Timp de dezvoltate: 15 zile * 2 programatori
+
+3. Automatizarea Documentelor:
+Implementarea unui sistem de automatizarea generării documentelor necesare, cum ar fi Avize de Calitate, documente SSM, Certificate de performanță.
+- Timp de dezvoltate: 5 zile * 2 programatori
+
+4. Gestionarea Cash-Flow-ului:
+Monitorizarea soldului curent al firmei în bancă și urmărirea viitoarelor plăți și încasări, împărțite pe ordine de plată (OP) și bilete la ordin (BO) automatizare prin importul de fișiere CSV din extrasele băncii.
+Implementarea unui sistem de gestionare a bugetelor (BO), cu posibilitatea de a seta și monitoriza limitele de cheltuieli pentru fiecare lună. (Notificări și avertizări pentru a preveni depășirea bugetului stabilit.)
+- Timp de dezvoltate: 20 zile * 2 programatori
+
+5. Integrarea cu WinMentor:
+Integrarea cu Mentor, programul software actual, pentru a asigura o tranziție eficientă a datelor și proceselor.
+- Timp de dezvoltate: 12 zile * 1 programator
+
+III. Sugestii suplimentare:
+Implementarea unui API bancar pentru automatizarea operațiunilor de intrare și ieșire din contul bancar al firmei, cu scopul de a sincroniza automat o parte din datele financiare direct de pe cont.
+- Timp de dezvoltate: 10 zile * 1 programator
+
+IV. Pret și timp de implementare: 
+
+Timp estimat de livrare: 
+71 zile * 2 programatori (568 Ore lucratoare dezvoltare bază): X Euro + TVA 
+10 zile * 1 programator (secțiunea sugestii = 80 Ore lucratoare): X Euro + TVA 
+Timpul de livrare este influențat de complexitatea proiectului și cerințele dumneavoastră. 
+Vom lucra în strânsă colaborare cu dumneavoastră pentru a respecta termenele stabilite.
