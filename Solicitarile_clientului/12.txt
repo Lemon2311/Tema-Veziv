@@ -1,0 +1,1 @@
+Solicitarea client: Introducerea clientilor in baza de date , emiterea de documente in mod automat/client, trimiterea lor cu posibilitatea de a semna digital in sistemul DocuSign.

@@ -1,0 +1,1 @@
+Solicitarea client: Aplicatie utilizator automobile si reteaua de service , sistem obd care sa comunice cu telefonul , Aplicatia sa anunte si sa dea notificari cand expira itp, sa se introduca erorile din bord, sa poata chema masina cu platforma pt ridicare din aplicatie.
