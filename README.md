@@ -1,5 +1,7 @@
 # Tema-Veziv
 
+README NEEDS TO BE UPDATED THIS IS A SKETCH
+
 Plan:
 
 Run llama3 locally:
