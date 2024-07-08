@@ -27,3 +27,5 @@ def prepare_data():
 
     with open('data.json', 'w', encoding='utf-8') as f_json:
         json.dump(data, f_json, indent=4, ensure_ascii=False)
+
+prepare_data()

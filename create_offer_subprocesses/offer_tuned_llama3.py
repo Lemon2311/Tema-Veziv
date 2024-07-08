@@ -127,3 +127,20 @@ def prompt_offer(solicitarea_client):
 
     outputs = model.generate(**inputs, max_new_tokens = 6400, use_cache = True)
     return tokenizer.batch_decode(outputs)
+
+import os
+
+request_dir = "client_requests"
+
+request_files = os.listdir(request_dir)
+
+for request_file in request_files:
+    with open(os.path.join(request_dir, request_file), "r") as file:
+        solicitarea_client = file.read()
+
+    prompt_offer_text = prompt_offer(solicitarea_client)
+
+    client_offer_file = os.path.join("client_offers", f"{request_file}_offer.txt")
+    
+    with open(client_offer_file, "w") as file:
+        file.write(prompt_offer_text)

@@ -4,6 +4,14 @@ max_seq_length = 10048 # auto support RoPE Scaling internally!
 dtype = None
 load_in_4bit = True # Use 4bit quantization to reduce memory usage.
 
+import argparse
+
+parser = argparse.ArgumentParser(description='huggingface model used for finetuning')
+
+parser.add_argument('--model', type=str, help='huggingface model used for finetuning')
+
+args = parser.parse_args()
+
 # 4bit pre quantized model for 4x faster downloading.
 fourbit_models = [
     "unsloth/mistral-7b-v0.3-bnb-4bit",
@@ -62,7 +70,7 @@ def formatting_prompts_func(examples):
 pass
 
 from datasets import load_dataset
-dataset = load_dataset("Lemon2311/clientOffer", split = "train")
+dataset = load_dataset(args.model, split = "train")
 dataset = dataset.map(formatting_prompts_func, batched = True,)
 
 from trl import SFTTrainer

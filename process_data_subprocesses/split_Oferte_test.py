@@ -5,8 +5,6 @@ path_Oferte_test = 'Oferte_test'
 
 files = [f for f in os.listdir(path_Oferte_test)]
 
-# add renameing Oferte_test docx files to be named after their index
-
 def get_text_from_docx(filename):
     doc = Document(filename)
     full_text = []
@@ -35,3 +33,5 @@ def split_text():
 
         with open(f"output/{os.path.splitext(f)[0] + ".txt"}", 'w', encoding='utf-8') as file:
             file.write(f"{get_substring_starting_from_space(get_text_from_docx(f"{path_Oferte_test}/{f}"))}")
+
+split_text()

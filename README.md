@@ -14,3 +14,4 @@ traning take
 combination maybe if needed
 
 # to be updated
+python train.py --model_name "Lemon2311/clientOffer"
