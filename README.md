@@ -162,3 +162,5 @@ Calculatorul meu nu a fost capabil sa ruleze unsloth local deoarece am 8g VRam s
 exemplu.txt din client_requests este exemplul oferit in Test job Veziv
 
 [huggingface website](https://huggingface.co/)
+
+Instructiunea pentru alpaca prompt este luata din cerinta temei, se gaseste in request_template.txt, este acceasi pentru fiecare element din dataset, Input-ul("Solicitarea client") facand diferenta.
