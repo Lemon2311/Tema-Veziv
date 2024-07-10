@@ -1,9 +1,55 @@
 # Tema-Veziv
+Tema prentru evaluarea competentelor primita de la firma Veziv.
 
-!pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
-!pip install --no-deps "xformers<0.0.27" "trl<0.9.0" peft accelerate bitsandbytes
-!pip install python-docx
+Modelul llama3 fine-tuned pentru a genera oferte clientilor ca raspuns la solicitarea client.
 
+
+## Necesitati hardware & software
+ - linux machine
+ - placa video cu aproximativ 20 VRam
+
+ *note: eu am folosit un nVidia L4 cu 25 ram, in general consumul a fost de aproximativ 15 vram, am reusit sa il rulez si pe un t4 cu 15 vram dar am intampinat adesea eroarea: not enaught Vram*
+
+Functionalitatea este impartita in 3 procese principale:
+ - process_data.py
+    - acest script extrage datele pentru antrenare din documentele word aflate in directory-ul Oferte_test si creaza fisierul data.json care contine datasetul impartit urmand formatul alpaca prompt(instruction, input, output) dupa care acesta poate fi adaugat ca dataset pe siteul huggingface pentru a fi folosit ulterior in functia train.py 
+ - train.py
+    - acest script antreneaza(fine-tuning) modelul llama3:8b pe orice dataset de pe huggingface pasat ca argument la chemarea scriptului, respectiv pe datasetul creat cu process-data.py dupa adaugarea lui pe huggingface sau precum precizat orice dataset de pe huggingface <br>
+
+      *exemplu de folosire*
+      ```
+      python train.py --model Lemon2311/clientOffer
+      ```
+      *note: Lemon2311/clientOffer este datasetul creat cu process_data.py din fisierul Oferte pentru test AI downloadad din arhiva care acum se regaseste pe huggingface*
+ - create_offer.py
+     - acest script este folosit pentru a extrage textul din fisierele txt din directoy-ul client_requests, a folosi modelul fine tuned llama3:8b si a crea in directory-ul client-offers_docx fisiere de tip word continand oferta generata pe baza cerintei clientului.
+       <br>
+       
+       *exemplu de text care se regaeseste intr-un fisier din client_requests (exemplu.txt)*
+       ```
+       Solicitarea client: O alpicatie web care sa....
+       ```
+
+## Dependentele necesare bazate pe systemul de operare folosit
+- Linux
+   - Cuda drivers
+       - cuda toolkit
+       - pytorch cu driverele cuda
+       - unsloth
+       - python-docx
+- Windows
+   - Wsl si un distro de linux care e compatibil cu pyTorch
+   *note: cel mai usor este sa downlodati ubuntu de pe microsoft store care instaleaza wsl si versiunea de ubuntu selectata si creaza aplicatia ubuntu care cand este folosita deschide un terminal de linux care e conectat la enviromentul linux instalat.*
+   - Cuda drivers
+       - cuda toolkit varianta pentru wsl in enviromentul linux
+       - cuda wsl drivers in windows
+       - pytorch cu driverele cuda
+       - unsloth
+       - python-docx
+```
+pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+pip install --no-deps "xformers<0.0.27" "trl<0.9.0" peft accelerate bitsandbytes
+```
 README NEEDS TO BE UPDATED THIS IS A SKETCH
 
 Plan:
