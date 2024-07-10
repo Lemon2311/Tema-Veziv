@@ -67,7 +67,9 @@ Functionalitatea este impartita in 3 procese principale:
  Un set de date mai mare generat cu ajutorul llama3 pe baza exemplelor din Oferte pentru test AI. Exemplele avand o structura asemanatoare dar cu unele diferente precum unde este precizata durata unui proces si costurile, cea mai buna sansa pentru a realiza un rezultat asemanator a fost antrenarea modelului sa genereze tot fisierul intr-un prompt, datele find de asemenea interconectate(ex: structura si definitiile, structura si pretul). Rezultatele in urma antrenarii pe baza celor 16 documente este promitatoare, iar o cale de a optimiza rezultatele este crearea mai multor documente cu ajutorul llama3, si folosindu-ne de llama3 pentru a verifica de asemenea asemanarea dintre documentele generate de llm si cele date ca exemplu.
 
 ## Dependentele necesare bazate pe systemul de operare folosit
-Python & pip corespunzator cu pytorch pentru orice system de operare
+Python & pip corespunzator cu pytorch.
+*[Note from pytorch website](https://pytorch.org/): Latest PyTorch requires Python 3.8 or later.*
+
 *note: Daca intampinati erori in pasii urmatori*
 ```
 pip install --upgrade pip
@@ -149,3 +151,5 @@ Calculatorul meu nu a fost capabil sa ruleze unsloth local deoarece am 8g VRam s
 
 ## Note suplimentare
 exemplu.txt din client_requests este exemplul oferit in Test job Veziv
+
+[huggingface website](https://huggingface.co/)
