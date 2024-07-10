@@ -2,7 +2,8 @@
 Tema prentru evaluarea competentelor primita de la firma Veziv.
 
 Modelul llama3 fine-tuned pentru a genera oferte clientilor ca raspuns la solicitarea client.
-
+## Generare oferte
+Dupa instalarea [dependentelor](#Dependentele-necesare-bazate-pe-systemul-de-operare-folosit).
 
 ## Necesitati hardware & software
  - linux machine
