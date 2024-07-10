@@ -116,9 +116,15 @@ Pentru mai multe detalii legate de instalarea unsloth care urmeaza precum instal
      echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
      source ~/.bashrc
       ```
+  *Note: dupa instalarea pytorch in wsl am intampinat o eroare legata de versiune de numpy pe care am resolvat-o reinstaland numpy urmand versiunea din mesajul de eroare*
 
-## Plan
-Run llama3 locally:
-       tried 70b, but computer not good enaught
-       tried layered inference version but didnt have enaught memory on my ssd
-       using llama3 8b
+  *Note: Nu am avut destul VRam pt a rula modelul in wsl asa ca am folosit google cloud pt testing*
+
+## Note Aditionale legate de design
+Calculatorul meu nu a fost capabil sa ruleze llama3:70b
+
+Nu am avut destula memorie pe ssd pentru a folosi llama3:70b layerd inference facut de [AirLLM](https://github.com/lyogavin/Anima/tree/main/air_llm), care ar trebui sa ofere performanta impresionanta facand llama3:70b sa ruleze pe o placa video de 4GB ram.
+
+Am folosit unsloth pt antrenare si rulare llama3:8b deoarece scade durata de antrenare la jumatate si ofera functi precum RoPe scalling(a primi un input mai mare decat llama3:8b suporta nativ) si 4bit quantitization(care face modelul sa ruleze mai bine/mai repede local)
+
+Calculatorul meu nu a fost capabil sa ruleze unsloth local deoarece am 8g VRam si am intampinat eroarea not enaught VRam asa ca am antrenat si testat modelul in google colab deoarece google cloud nu mai avea disponibile gpu-uri si asa am putut sa ma foloses de un nVidia L4 pentru antrenare si rulare.
