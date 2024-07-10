@@ -12,6 +12,8 @@ parser.add_argument('--model', type=str, help='huggingface model used for finetu
 
 args = parser.parse_args()
 
+print(args.model)
+
 # 4bit pre quantized model for 4x faster downloading.
 fourbit_models = [
     "unsloth/mistral-7b-v0.3-bnb-4bit",

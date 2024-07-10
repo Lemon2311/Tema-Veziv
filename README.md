@@ -4,6 +4,8 @@
 !pip install --no-deps "xformers<0.0.27" "trl<0.9.0" peft accelerate bitsandbytes
 !pip install python-docx
 
+README NEEDS TO BE UPDATED THIS IS A SKETCH
+
 Plan:
 
 Run llama3 locally:
