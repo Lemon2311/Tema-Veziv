@@ -22,14 +22,14 @@ Dupa executarea scriptului create_offer.py, directory-ul client_offers_docx cont
  - linux machine
  - placa video cu aproximativ 20 VRam
 
- *note: eu am folosit un nVidia L4 cu 25 ram, in general consumul a fost de aproximativ 15 vram, am reusit sa il rulez si pe un t4 cu 15 vram dar am intampinat adesea eroarea: not enaught Vram*
+ *note: Am folosit un nVidia L4 cu 25 ram, in general consumul a fost de aproximativ 15 vram. Am reusit sa il rulez si pe un t4 cu 15 vram dar cu placa video t4 am intampinat adesea eroarea: not enaught Vram*
 
 ## Functionalitate
 Functionalitatea este impartita in 3 procese principale:
  - process_data.py
     - acest script extrage datele pentru antrenare din documentele word aflate in directory-ul Oferte_test si creaza fisierul data.json care contine datasetul impartit urmand formatul alpaca prompt(instruction, input, output) dupa care acesta poate fi adaugat ca dataset pe siteul huggingface pentru a fi folosit ulterior in functia train.py 
  - train.py
-    - acest script antreneaza(fine-tuning) modelul llama3:8b pe orice dataset de pe huggingface pasat ca argument la chemarea scriptului, respectiv pe datasetul creat cu process-data.py dupa adaugarea lui pe huggingface sau precum precizat orice dataset de pe huggingface <br>
+    - acest script antreneaza(fine-tuning) modelul llama3:8b pe orice dataset de pe huggingface pasat ca argument la chemarea scriptului, respectiv pe datasetul creat cu process-data.py dupa adaugarea lui pe huggingface sau precum precizat orice dataset de pe huggingface. Fine-tuning-ul este salvat ca un adaptor LoRa(<span title="Low-Rank Adaptation">Low-Rank Adaptation</span>) in directory-ul lora_model local, pentru a putea fi "merged" cu llama3:8b si folosit ulterior.<br>
 
       *exemplu de folosire*
       ```
