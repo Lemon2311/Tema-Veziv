@@ -2,6 +2,21 @@
 Tema prentru evaluarea competentelor primita de la firma Veziv.
 
 Modelul llama3:8b fine-tuned pentru a genera oferte clientilor ca raspuns la solicitarea client.
+
+## Cuprins
+1. [Generare Oferte](#generare-oferte)
+2. [Necesitati Hardware & Software](#necesitati-hardware--software)
+3. [Functionalitate](#functionalitate)
+   - process_data.py
+   - train.py
+   - create_offer.py
+4. [Inbunatatiri](#imbunatatiri)
+5. [Dependentele Necesare Bazate pe Sistemul de Operare Folosit](#Dependentele-necesare-bazate-pe-systemul-de-operare-folosit)
+   - Linux
+   - Windows
+6. [Note Aditionale Legate de Design](#note-aditionale-legate-de-design)
+7. [Note Suplimentare](#note-suplimentare)
+
 ## Generare oferte
 Dupa ce ati citit [necesitatile hardware si software](#Necesitati-hardware-&-software) si ati instalat [dependentele](#Dependentele-necesare-bazate-pe-systemul-de-operare-folosit).
 
@@ -131,3 +146,6 @@ Nu am avut destula memorie pe ssd pentru a folosi llama3:70b layerd inference fa
 Am folosit unsloth pt antrenare si rulare llama3:8b deoarece scade durata de antrenare la jumatate si ofera functi precum RoPe scalling(a primi un input mai mare decat llama3:8b suporta nativ) si 4 bit quantization(care face modelul sa ruleze mai bine/mai repede local)
 
 Calculatorul meu nu a fost capabil sa ruleze unsloth local deoarece am 8g VRam si am intampinat eroarea not enaught VRam asa ca am antrenat si testat modelul in google colab deoarece google cloud nu mai avea disponibile gpu-uri si asa am putut sa ma foloses de un nVidia L4 pentru antrenare si rulare.
+
+## Note suplimentare
+exemplu.txt din client_requests este exemplul oferit in Test job Veziv
