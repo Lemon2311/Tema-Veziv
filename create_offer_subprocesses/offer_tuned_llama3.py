@@ -1,20 +1,20 @@
 from unsloth import FastLanguageModel
 import torch
-max_seq_length = 10048 # auto support RoPE Scaling internally!
+max_seq_length = 10048 # RoPE Scaling internally
 dtype = None
-load_in_4bit = True # Use 4bit quantization to reduce memory usage.
+load_in_4bit = True # 4bit quantization to reduce memory usage
 
-# 4bit pre quantized model for 4x faster downloading.
+# 4bit pre quantized models for 4x faster downloading + no OOMs.
 fourbit_models = [
     "unsloth/mistral-7b-v0.3-bnb-4bit",
     "unsloth/mistral-7b-instruct-v0.3-bnb-4bit",
-    "unsloth/llama-3-8b-bnb-4bit",           # Llama-3 15 trillion tokens model 2x faster!
+    "unsloth/llama-3-8b-bnb-4bit",           # Llama-3 15 trillion tokens model 2x faster
     "unsloth/llama-3-8b-Instruct-bnb-4bit",
     "unsloth/llama-3-70b-bnb-4bit",
-    "unsloth/Phi-3-mini-4k-instruct",
+    "unsloth/Phi-3-mini-4k-instruct",        
     "unsloth/Phi-3-medium-4k-instruct",
     "unsloth/mistral-7b-bnb-4bit",
-    "unsloth/gemma-7b-bnb-4bit",
+    "unsloth/gemma-7b-bnb-4bit",             
 ]
 
 model, tokenizer = FastLanguageModel.from_pretrained(
@@ -24,85 +24,15 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit = load_in_4bit,
 )
 
-model = FastLanguageModel.get_peft_model(
-    model,
-    r = 16,
-    target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
-                      "gate_proj", "up_proj", "down_proj",],
-    lora_alpha = 16,
-    lora_dropout = 0,
-    bias = "none",
-    use_gradient_checkpointing = "unsloth",
-    random_state = 3407,
-    use_rslora = False,
-    loftq_config = None,
-)
-
-alpaca_prompt = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
-
-### Instruction:
-{}
-
-### Input:
-{}
-
-### Response:
-{}"""
-
-EOS_TOKEN = tokenizer.eos_token
-def formatting_prompts_func(examples):
-    instructions = examples["instruction"]
-    inputs       = examples["input"]
-    outputs      = examples["output"]
-    texts = []
-    for instruction, input, output in zip(instructions, inputs, outputs):
-        text = alpaca_prompt.format(instruction, input, output) + EOS_TOKEN
-        texts.append(text)
-    return { "text" : texts, }
-pass
-
-from datasets import load_dataset
-dataset = load_dataset("Lemon2311/clientOffer", split = "train")
-dataset = dataset.map(formatting_prompts_func, batched = True,)
-
-from trl import SFTTrainer
-from transformers import TrainingArguments
-from unsloth import is_bfloat16_supported
-
-trainer = SFTTrainer(
-    model = model,
-    tokenizer = tokenizer,
-    train_dataset = dataset,
-    dataset_text_field = "text",
-    max_seq_length = max_seq_length,
-    dataset_num_proc = 2,
-    packing = False,
-    args = TrainingArguments(
-        per_device_train_batch_size = 2,
-        gradient_accumulation_steps = 4,
-        warmup_steps = 5,
-        max_steps = 60,
-        learning_rate = 2e-4,
-        fp16 = not is_bfloat16_supported(),
-        bf16 = is_bfloat16_supported(),
-        logging_steps = 1,
-        optim = "adamw_8bit",
-        weight_decay = 0.01,
-        lr_scheduler_type = "linear",
-        seed = 3407,
-        output_dir = "outputs",
-    ),
-)
-
 if True:
     from unsloth import FastLanguageModel
     model, tokenizer = FastLanguageModel.from_pretrained(
-        model_name = "lora_model", # LoRA
+        model_name = "lora_model", # LoRA model adapter
         max_seq_length = max_seq_length,
         dtype = dtype,
         load_in_4bit = load_in_4bit,
     )
-    FastLanguageModel.for_inference(model)
+    FastLanguageModel.for_inference(model) # 2x faster inference
 
 alpaca_prompt = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
 
@@ -125,7 +55,7 @@ def prompt_offer(solicitarea_client):
         )
     ], return_tensors = "pt").to("cuda")
 
-    outputs = model.generate(**inputs, max_new_tokens = 6400, use_cache = True)
+    outputs = model.generate(**inputs, max_new_tokens = 3000, use_cache = True)
     return tokenizer.batch_decode(outputs)
 
 import os
@@ -140,7 +70,11 @@ for request_file in request_files:
 
     prompt_offer_text = prompt_offer(solicitarea_client)
 
-    client_offer_file = os.path.join("client_offers", f"{request_file}_offer.txt")
+    # Ensure prompt_offer_text is a string
+    if isinstance(prompt_offer_text, list):
+        prompt_offer_text = "\n".join(prompt_offer_text)  # Join list elements with newline
+
+    client_offer_file = os.path.join("client_offers", f"{request_file}")
     
     with open(client_offer_file, "w") as file:
         file.write(prompt_offer_text)

@@ -7,7 +7,9 @@ def parse(responsePath, outputPath):
 
     content = content.replace('\\n', '\n')
     start_index = content.find("Response:") + len("Response:")
-    end_index = content.find("<|end_of_text|>']")
+    end_index = content.find("Response:", start_index + len("Response:"))
+    if end_index==-1:
+        end_index = content.find("]")
 
     doc = Document()
 
@@ -28,8 +30,8 @@ def process_all_files(input_dir, output_dir):
             output_path = os.path.join(output_dir, filename.replace('.txt', '.docx'))
             parse(input_path, output_path)
 
-input_dir = 'FineTunedModelOutputExamplesRaw'
-output_dir = 'FineTunedModelOutputExamplesDocx'
+input_dir = 'client_offers'
+output_dir = 'client_offers_docx'
 
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)

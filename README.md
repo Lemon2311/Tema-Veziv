@@ -1,5 +1,9 @@
 # Tema-Veziv
 
+!pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+!pip install --no-deps "xformers<0.0.27" "trl<0.9.0" peft accelerate bitsandbytes
+!pip install python-docx
+
 Plan:
 
 Run llama3 locally:
