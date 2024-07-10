@@ -29,7 +29,7 @@ Functionalitatea este impartita in 3 procese principale:
  - process_data.py
     - acest script extrage datele pentru antrenare din documentele word aflate in directory-ul Oferte_test si creaza fisierul data.json care contine datasetul impartit urmand formatul alpaca prompt(instruction, input, output) dupa care acesta poate fi adaugat ca dataset pe siteul huggingface pentru a fi folosit ulterior in functia train.py 
  - train.py
-    - acest script antreneaza(fine-tuning) modelul llama3:8b pe orice dataset de pe huggingface pasat ca argument la chemarea scriptului, respectiv pe datasetul creat cu process-data.py dupa adaugarea lui pe huggingface sau precum precizat orice dataset de pe huggingface. Fine-tuning-ul este salvat ca un adaptor LoRa(<span title="Low-Rank Adaptation">Low-Rank Adaptation</span>) in directory-ul lora_model local, pentru a putea fi "merged" cu llama3:8b si folosit ulterior.<br>
+    - acest script antreneaza(fine-tuning) modelul llama3:8b pe orice dataset de pe huggingface pasat ca argument la chemarea scriptului, respectiv pe datasetul creat cu process-data.py dupa adaugarea lui pe huggingface sau precum precizat orice dataset de pe huggingface. Fine-tuning-ul este salvat ca un adaptor [LoRa](# "Low-Rank Adaptation") in directory-ul lora_model local, pentru a putea fi "merged" cu llama3:8b si folosit ulterior.<br>
 
       *exemplu de folosire*
       ```
