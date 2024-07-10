@@ -3,7 +3,20 @@ Tema prentru evaluarea competentelor primita de la firma Veziv.
 
 Modelul llama3 fine-tuned pentru a genera oferte clientilor ca raspuns la solicitarea client.
 ## Generare oferte
-Dupa instalarea [dependentelor](#Dependentele-necesare-bazate-pe-systemul-de-operare-folosit).
+Dupa ce ati citit [necesitatile hardware si software](#Necesitati-hardware-&-software) si ati instalat [dependentele](#Dependentele-necesare-bazate-pe-systemul-de-operare-folosit).
+
+``` 1.)Adaugati in directory-ul client_requests fisiere de tip .txt continand Solicitarea client ale caror text sa urmeze structura:```
+
+``` Solicitarea client: O aplicatie care sa...```
+
+``` 2.)```
+
+```
+python create_offer.py
+```
+
+```3.) acum directory-ul client_offers_docx contine ofertele ca rezultat a solicitari clientului in fisiere word numite corespunzator, precum fisierele .txt din client_requests astfel incat sa aiba acelasi nume, diferentiand doar locatia si extensia.```
+
 
 ## Necesitati hardware & software
  - linux machine
