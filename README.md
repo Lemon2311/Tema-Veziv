@@ -9,7 +9,7 @@ Un mod usor pentru a observa functionalitatea este acest [google colab](https://
 gdown https://drive.google.com/uc?id=1WEP9C_sPiO5ktzb4nDrgRE-JP71xEgsz
 ```
 ```
-mv adapter_model.safetensors lora_model
+mv adapter_model.safetensors lora_model/
 ```
 *note: Acestea downloadeaza modelul din google drive-ul meu, deoarece am ramas fara credite in git large file storage*
 ## Cuprins
