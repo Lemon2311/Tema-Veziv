@@ -15,7 +15,7 @@ Dupa ce ati citit [necesitatile hardware si software](#Necesitati-hardware-&-sof
 python create_offer.py
 ```
 
-```3.) acum directory-ul client_offers_docx contine ofertele ca rezultat a solicitari clientului in fisiere word numite corespunzator, precum fisierele .txt din client_requests astfel incat sa aiba acelasi nume, diferentiand doar locatia si extensia.```
+Dupa executarea scriptului create_offer.py, directory-ul client_offers_docx contine ofertele ca rezultat a solicitarilor clientilor in fisiere word numite corespunzator, precum fisierele .txt din client_requests astfel incat sa aiba acelasi nume, diferentiand doar locatia si extensia.
 
 
 ## Necesitati hardware & software
@@ -24,6 +24,7 @@ python create_offer.py
 
  *note: eu am folosit un nVidia L4 cu 25 ram, in general consumul a fost de aproximativ 15 vram, am reusit sa il rulez si pe un t4 cu 15 vram dar am intampinat adesea eroarea: not enaught Vram*
 
+## Functionalitate
 Functionalitatea este impartita in 3 procese principale:
  - process_data.py
     - acest script extrage datele pentru antrenare din documentele word aflate in directory-ul Oferte_test si creaza fisierul data.json care contine datasetul impartit urmand formatul alpaca prompt(instruction, input, output) dupa care acesta poate fi adaugat ca dataset pe siteul huggingface pentru a fi folosit ulterior in functia train.py 
