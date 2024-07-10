@@ -10,7 +10,7 @@ Modelul llama3:8b fine-tuned pentru a genera oferte clientilor ca raspuns la sol
    - process_data.py
    - train.py
    - create_offer.py
-4. [Inbunatatiri](#imbunatatiri)
+4. [Inbunatatiri](#Inbunatatiri)
 5. [Dependentele Necesare Bazate pe Sistemul de Operare Folosit](#Dependentele-necesare-bazate-pe-systemul-de-operare-folosit)
    - Linux
    - Windows
