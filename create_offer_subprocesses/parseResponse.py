@@ -6,10 +6,12 @@ def parse(responsePath, outputPath):
         content = file.read()
 
     content = content.replace('\\n', '\n')
-    start_index = content.find("Response:") + len("Response:")
-    end_index = content.find("Response:", start_index + len("Response:"))
+    start_index = content.find("Response") + len("Response")
+    end_index = content.find("Response", start_index + len("Response"))
     if end_index==-1:
         end_index = content.find("]")
+    if end_index==-1:
+        end_index = len(content) + 1
 
     doc = Document()
 
