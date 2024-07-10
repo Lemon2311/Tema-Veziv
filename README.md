@@ -4,6 +4,14 @@ Tema prentru evaluarea competentelor primita de la firma Veziv.
 Modelul llama3:8b fine-tuned pentru a genera oferte clientilor ca raspuns la solicitarea client.
 
 Un mod usor pentru a observa functionalitatea este acest [google colab](https://colab.research.google.com/drive/15vOSnOfnwcV8B8udUKv_Yrv-unr20N5C?usp=sharing) dar ca sa ruleze este necesar de un gpu nvidia L4, varianta free ofera un T4 iar aceasta rezulta in eroarea: not enaught VRam, si din pacate nu exista un sistem pt a impartasi resurse.
+## Inainte de a folosi modelul, dupa git clone trebuie rulate 2 comenzi in Tema-Veziv
+```
+gdown https://drive.google.com/uc?id=1WEP9C_sPiO5ktzb4nDrgRE-JP71xEgsz
+```
+```
+mv adapter_model.safetensors lora_model
+```
+*note: Acestea downloadeaza modelul din google drive-ul meu, deoarece am ramas fara credite in git large file storage*
 ## Cuprins
 1. [Generare Oferte](#generare-oferte)
 2. [Necesitati Hardware & Software](#necesitati-hardware--software)
